@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Travel.Models.Province>
+
+@{
+    ViewBag.Title = "Rejony";
+}
+<h2>Rejony </h2>
+
+<div id="Provinces">
+    
+    @foreach (var province in Model)
+    {
+        @Html.ActionLink(province.Name, "Trips","Home",new {id = province.ProvinceId },null);
+        <br/>
+    }
+
+</div>

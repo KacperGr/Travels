@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Travel.Models.Route>
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2> Moje podróże</h2>
+    <br>
+
+@Html.ActionLink("Dodaj podróż", "AddTrip");
+    <ul>
+        @foreach (var route in Model)
+        {
+            <li>
+                Z @route.FromName
+                <text>Do</text>
+                @route.ToName
+                @Html.ActionLink("Szczegóły", "TripDetails", "Home", new { id = route.RouteId }, null) 
+                @if (ViewBag.UserId != null && route.DriverId == ViewBag.UserId)
+                {
+                    @Html.ActionLink("Usuń podróż", "DeleteTrip", "MyTrips", new { id = route.RouteId }, null);
+                }
+                else
+                {
+                    @Html.ActionLink("Zrezygnuj z podróży", "DeletePassenger", "Home", new { id = route.RouteId }, null);
+                }
+            </li>
+        }
+    </ul>
+
+

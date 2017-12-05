@@ -1,0 +1,45 @@
+﻿@model Travel.Models.TripsViewModel
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Podróże";
+}
+<h2>Trasy</h2>
+<div id="trips">
+    @foreach (var trip in Model.TripsList)
+    {
+        <ul>
+            <li>
+                <text>Z: </text>@trip.Trip.FromName
+                <br>
+                <text> Do: </text> @trip.Trip.ToName
+                <br>
+                <text> Ilość pasażerów: </text> @trip.UsersList.Count
+                <br />
+                @if (Model.User != null && trip.DriverId == Model.User.Id)
+                {
+                    @Html.ActionLink("Usuń podróż", "DeleteTrip", "MyTrips", new { id = trip.Trip.RouteId }, null);
+                }
+                else if (trip.UsersList.Contains(Model.User))
+                {
+                    @Html.ActionLink("Zrezygnuj z podróży", "DeletePassenger", "Home", new { id = trip.Trip.RouteId }, null);
+                }
+                else if (trip.UsersList.Count < trip.Trip.MaxPassengerCount)
+                {
+                    @Html.ActionLink("Dołącz", "AddPassenger", "Home", new { id = trip.Trip.RouteId }, null);
+                }
+                @Html.ActionLink("Szczegóły", "TripDetails", "Home", new { id = trip.Trip.RouteId }, null)
+
+            </li>
+        </ul>
+    }
+    Strona @(Model.TripsList.PageCount < Model.TripsList.PageNumber ? 0 : Model.TripsList.PageNumber) / @Model.TripsList.PageCount
+
+@Html.PagedListPager(Model.TripsList, page => Url.Action("Trips",
+                    new
+                    {
+                        ViewBag.Id,
+                        page
+                    }))
+
+</div>
+

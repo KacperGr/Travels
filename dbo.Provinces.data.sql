@@ -1,0 +1,18 @@
+﻿SET IDENTITY_INSERT [dbo].[Provinces] ON
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (1, N'Małopolskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (2, N'Podkarpackie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (3, N'Dolnośląskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (4, N'Kujawsko-Pomorskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (5, N'Lubelskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (6, N'Lubuskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (7, N'Łódzkie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (8, N'Mazowieckie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (9, N'Opolskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (10, N'Podlaskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (11, N'Pomorskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (12, N'Śląskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (13, N'Świętokrzyskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (14, N'Warmińsko-Mazurskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (15, N'Wielkopolskie')
+INSERT INTO [dbo].[Provinces] ([ProvinceId], [Name]) VALUES (16, N'Zachodniopomorskie')
+SET IDENTITY_INSERT [dbo].[Provinces] OFF
