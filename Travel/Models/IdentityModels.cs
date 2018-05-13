@@ -34,7 +34,7 @@ namespace Travel.Models
         public DbSet<Comment> Comments { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LocalTravel", throwIfV1Schema: false)
         {
         }
 
